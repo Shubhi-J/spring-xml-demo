@@ -14,17 +14,16 @@ public class Demo {
         // using application context
         ApplicationContext context=new ClassPathXmlApplicationContext("beans.xml");
 
-        Movie movie=context.getBean("objMovie", Movie.class);
+         // create object of Movie1 bean
+          Movie movie1=context.getBean("Movie1", Movie.class);
+          movie1.displayActor();
 
-        movie.displayActor();
+        // create object of Movie2 bean
+          Movie movie2=context.getBean("Movie2", Movie.class);
+          movie2.displayActor();
 
-        // using bean factory
-        BeanFactory factory = new XmlBeanFactory(new ClassPathResource("beans.xml"));
-        Movie movie1 = (Movie) factory.getBean("objMovie");
-        movie1.displayActor();
-
-        // using beanDefinitionRegistry
-
+        // check the equality of two beans, if type is prototype then it returns false otherwise true
+         System.out.println(movie1==movie2);
     }
 
 

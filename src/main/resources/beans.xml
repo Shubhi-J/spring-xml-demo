@@ -4,16 +4,39 @@
        xsi:schemaLocation="
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-
-    <bean id="objActor" class="com.stackroute.domain.Actor">
-        <property name="name" value="Shubhi"/>
-        <property name="gender" value="female"/>
-        <property name="age" value="22"/>
+    <!-- set the properties of actor1 using name -->
+    <bean id="objShubhi" class="com.stackroute.domain.Actor">
+        <constructor-arg name="name" value="Shubhi"/>
+        <constructor-arg name="gender" value="female"/>
+        <constructor-arg name="age" value="22"/>
     </bean>
 
-    <bean id="objMovie" class="com.stackroute.domain.Movie">
-
-        <property name="actor" ref="objActor"/>
-
+    <!-- set the properties of actor2 using type -->
+    <bean id="objCharu" class="com.stackroute.domain.Actor">
+        <constructor-arg type="String" value="Charu"/>
+        <constructor-arg type="String" value="female"/>
+        <constructor-arg type="int" value="22"/>
     </bean>
-    </beans>
+
+    <!-- set the properties of actor3 using index -->
+    <bean id="objRupesh" class="com.stackroute.domain.Actor">
+        <constructor-arg index="0" value="Rupesh"/>
+        <constructor-arg index="1" value="male"/>
+        <constructor-arg index="2" value="28"/>
+    </bean>
+
+    <!-- create object of movie class and name it to movie1 -->
+    <bean name="Movie1" class="com.stackroute.domain.Movie" scope="prototype">
+        <constructor-arg name="actor1" ref="objShubhi"/>
+        <constructor-arg name="actor2" ref="objCharu"/>
+        <constructor-arg name="actor3" ref="objRupesh"/>
+    </bean>
+
+    <!-- create object of movie class and name it to movie2 -->
+    <bean name="Movie2" class="com.stackroute.domain.Movie" scope="prototype">
+        <constructor-arg name="actor1" ref="objShubhi"/>
+        <constructor-arg name="actor2" ref="objCharu"/>
+        <constructor-arg name="actor3" ref="objRupesh"/>
+    </bean>
+
+</beans>

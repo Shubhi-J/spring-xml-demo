@@ -14,22 +14,8 @@ public class Actor {
         this.age = age;
     }
 
-    // setter methods
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
     // method to display the information of actor
     public void displayActor(){
-        System.out.println("the actor details are:");
         System.out.println("Name is "+this.name+" Gender is "+this.gender+" Age is "+this.age);
     }
 }
