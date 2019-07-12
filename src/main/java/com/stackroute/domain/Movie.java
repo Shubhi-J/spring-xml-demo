@@ -1,13 +1,16 @@
 package com.stackroute.domain;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+
 public class Movie {
 
-    // create three objects of actor
+    // create objects of actor
     private Actor actor1;
     private Actor actor2;
     private Actor actor3;
 
-    // generate constructor for three actors
+    // create constructor of three objects of actor
     public Movie(Actor actor1, Actor actor2, Actor actor3) {
         this.actor1 = actor1;
         this.actor2 = actor2;

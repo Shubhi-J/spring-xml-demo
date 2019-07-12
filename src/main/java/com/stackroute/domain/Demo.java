@@ -1,10 +1,6 @@
 package com.stackroute.domain;
-import org.springframework.beans.factory.BeanFactory;
-import org.springframework.beans.factory.support.BeanDefinitionRegistry;
-import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.core.io.ClassPathResource;
 
 
 public class Demo {
@@ -18,13 +14,15 @@ public class Demo {
           Movie movie1=context.getBean("Movie1", Movie.class);
           movie1.displayActor();
 
-        // create object of Movie2 bean
-          Movie movie2=context.getBean("Movie2", Movie.class);
-          movie2.displayActor();
-
-        // check the equality of two beans, if type is prototype then it returns false otherwise true
-         System.out.println(movie1==movie2);
-    }
+          /* The exception thrown using btType is
+            Exception encountered during context initialization - cancelling refresh attempt
+            org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'Movie1'
+            defined in class path resource [beans.xml]: Unsatisfied dependency expressed through bean property 'actor1': :
+            No qualifying bean of type [com.stackroute.domain.Actor] is defined: expected single matching bean but found 3:
+            actor1,actor2,actor3; nested exception is org.springframework.beans.factory.NoUniqueBeanDefinitionException:
+            No qualifying bean of type [com.stackroute.domain.Actor] is defined: expected single matching bean but found 3: actor1,actor2,actor3
+          */
+}
 
 
 }
