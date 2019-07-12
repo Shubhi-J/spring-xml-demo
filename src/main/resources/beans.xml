@@ -5,7 +5,12 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
+
     <!-- define BeanLifeCycleBean -->
-    <bean name="BeanLifeCycleDemoBean" destroy-method="customDestroy" init-method="customInit"
+    <bean name="BeanLifecycleDemoBean" destroy-method="customDestroy" init-method="customInit"
           class="com.stackroute.domain.BeanLifecycleDemoBean" />
+
+    <!-- define BeanPostProcessorBean -->
+    <bean name="BeanPostProcessorDemoBean"
+          class="com.stackroute.domain.BeanPostProcessorDemoBean" />
 </beans>
