@@ -4,36 +4,8 @@
        xsi:schemaLocation="
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <!-- set the properties of actor1 using name -->
-    <bean id="actor1" class="com.stackroute.domain.Actor">
-        <property name="name" value="Shubhi"/>
-        <property name="gender" value="female"/>
-        <property name="age" value="22"/>
-    </bean>
 
-    <!-- set the properties of actor2 using type -->
-    <bean id="actor2" class="com.stackroute.domain.Actor">
-        <property name="name" value="Charu"/>
-        <property name="gender" value="female"/>
-        <property name="age" value="22"/>
-    </bean>
-
-    <!-- set the properties of actor3 using index -->
-    <bean id="actor3" class="com.stackroute.domain.Actor">
-        <property name="name" value="Rupesh"/>
-        <property name="gender" value="male"/>
-        <property name="age" value="28"/>
-    </bean>
-
-    <!-- create object of movie class and name it to movie1 and autowire using constructor -->
-    <bean name="Movie1" class="com.stackroute.domain.Movie" autowire="constructor">
-    </bean>
-
-    <!-- create object of movie class and name it to movie2 -->
-<!--    <bean name="Movie2" class="com.stackroute.domain.Movie" scope="prototype">-->
-<!--        <constructor-arg name="actor1" ref="objShubhi"/>-->
-<!--        <constructor-arg name="actor2" ref="objCharu"/>-->
-<!--        <constructor-arg name="actor3" ref="objRupesh"/>-->
-<!--    </bean>-->
-
+    <!-- define BeanLifeCycleBean -->
+    <bean name="BeanLifeCycleDemoBean" destroy-method="customDestroy" init-method="customInit"
+          class="com.stackroute.domain.BeanLifecycleDemoBean" />
 </beans>
