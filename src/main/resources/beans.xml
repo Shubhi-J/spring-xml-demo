@@ -24,6 +24,14 @@
         <constructor-arg index="1" value="male"/>
         <constructor-arg index="2" value="28"/>
     </bean>
+       
+       
+    <!-- set the properties of actor3 using index -->
+    <bean id="objPrachi" class="com.stackroute.domain.Actor">
+        <constructor-arg index="0" value="Prachi"/>
+        <constructor-arg index="1" value="female"/>
+        <constructor-arg index="2" value="28"/>
+    </bean>
 
     <!-- create object of movie class and name it to movie1 -->
     <bean name="Movie1" class="com.stackroute.domain.Movie" scope="prototype">
@@ -33,10 +41,10 @@
     </bean>
 
     <!-- create object of movie class and name it to movie2 -->
-    <bean name="Movie2" class="com.stackroute.domain.Movie" scope="prototype">
+    <bean name="Movie2,Movie3" class="com.stackroute.domain.Movie" scope="prototype">
         <constructor-arg name="actor1" ref="objShubhi"/>
         <constructor-arg name="actor2" ref="objCharu"/>
-        <constructor-arg name="actor3" ref="objRupesh"/>
+        <constructor-arg name="actor3" ref="objPrachi"/>
     </bean>
 
 </beans>
