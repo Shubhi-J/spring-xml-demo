@@ -21,6 +21,11 @@ public class Demo {
         // create object of Movie2 bean
           Movie movie2=context.getBean("Movie2", Movie.class);
           movie2.displayActor();
+        
+          // create object of Movie3 bean
+          Movie movie3=context.getBean("Movie3", Movie.class);
+          movie3.displayActor();
+
 
         // check the equality of two beans, if type is prototype then it returns false otherwise true
          System.out.println(movie1==movie2);
